@@ -12,9 +12,24 @@
         <h1>Моя информация</h1>
         <p>Меня зовут Елнур Джамалов. Я студент факультета компьютерных наук. Мне нравится программировать и изучать новые технологии.</p>
         <p>В свободное время я люблю читать книги, заниматься спортом и путешествовать.</p>
-        <a href="https://youtube.com" target="_blank">Мой любимый сайт</a>
+        <a href="https://youtube.com" target="_blank">Мой любимый сайт</a><br>
 
-        <script>
+        <img src="cat.jpg" alt="Мысық" width="150">
+<img src="dog.jpg" alt="Ит" width="150">
+<img src="bird.jpg" alt="Құс" width="150"><br>
+
+    <h1>Комментарий қалдыру</h1>
+    <form id="commentForm">
+        <label for="name">Атыңыз:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="comment">Комментарий:</label><br>
+        <textarea id="comment" name="comment"></textarea><br><br>
+        
+        <button type="submit">Жіберу</button>
+    </form>
+
+    <script>
     const form = document.getElementById("commentForm");
     form.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -24,7 +39,7 @@
 
         // Telegram Bot Token + Chat ID
         const botToken = "8442580206:AAHmjNXrPKr5yN5SyMyaB-nLWXWiq1smbfk"; // өз токенің
-        const chatId = "123456789"; // өзіңнің chat_id
+        const chatId = "1712796190"; // өзіңнің chat_id
 
         const message = `Жаңа комментарий:\n👤 ${name}\n💬 ${comment}`;
 
@@ -48,8 +63,5 @@
     });
 </script>
 
-        
     </body>
-
-
 </html>
