@@ -13,6 +13,43 @@
         <p>Меня зовут Елнур Джамалов. Я студент факультета компьютерных наук. Мне нравится программировать и изучать новые технологии.</p>
         <p>В свободное время я люблю читать книги, заниматься спортом и путешествовать.</p>
         <a href="https://youtube.com" target="_blank">Мой любимый сайт</a>
+
+        <script>
+    const form = document.getElementById("commentForm");
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const comment = document.getElementById("comment").value;
+
+        // Telegram Bot Token + Chat ID
+        const botToken = "8442580206:AAHmjNXrPKr5yN5SyMyaB-nLWXWiq1smbfk"; // өз токенің
+        const chatId = "123456789"; // өзіңнің chat_id
+
+        const message = `Жаңа комментарий:\n👤 ${name}\n💬 ${comment}`;
+
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: message
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            alert("Комментарий жіберілді!");
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Қате кетті!");
+        });
+    });
+</script>
+
+        
     </body>
+
 
 </html>
